@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'bower-rails'
+gem 'angular-rails-templates'
+
 gem 'active_model_serializers'
-gem 'angularjs-rails', '~> 1.5', '>= 1.5.5'
+# gem 'angularjs-rails', '~> 1.5', '>= 1.5.5'
 
 gem "therubyracer"
 gem "less-rails"

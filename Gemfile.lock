@@ -40,10 +40,14 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    angularjs-rails (1.5.6)
+    angular-rails-templates (1.0.0)
+      railties (>= 4.2, < 6)
+      sprockets (~> 3.0)
+      tilt
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.10.0)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.1.1)
@@ -165,7 +169,8 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
-  angularjs-rails (~> 1.5, >= 1.5.5)
+  angular-rails-templates
+  bower-rails
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

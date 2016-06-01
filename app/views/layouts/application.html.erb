@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.0/angular-ui-router.js"></script>
   </head>
 <body ng-app="app">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -12,13 +13,9 @@
       <a class="navbar-brand" href="#">$$$potify</a>
       <ul class="nav navbar-nav">
         <li class="active">
-          <a href="#">Home</a>
+          <a ui-sref="home">Home</a>
         </li>
-        <li><a href="#">Charts</a></li>
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">About</a></li>
-
+        <li><a ui-sref="about">About</a></li>
       </ul>
     </div>
   </nav>
