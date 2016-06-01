@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>Ssspotify</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-<body>
+<body ng-app="app">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
       <a class="navbar-brand" href="#">$$$potify</a>
@@ -14,9 +14,9 @@
         <li class="active">
           <a href="#">Home</a>
         </li>
+        <li><a href="#">Charts</a></li>
         <li><a href="#">Log In</a></li>
         <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Charts</a></li>
         <li><a href="#">About</a></li>
 
       </ul>

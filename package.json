@@ -1,0 +1,26 @@
+{
+  "name": "ssspotify",
+  "version": "1.0.0",
+  "description": "how much do artists make on spotify?",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "^1.5.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLucasMoore/rails-angular-final-project.git"
+  },
+  "author": "Lucas Moore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheLucasMoore/rails-angular-final-project/issues"
+  },
+  "homepage": "https://github.com/TheLucasMoore/rails-angular-final-project#readme"
+}
