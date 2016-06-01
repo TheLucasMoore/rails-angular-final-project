@@ -1,6 +1,6 @@
 .top_index {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 10%;
 }
 
 img#header_image {
@@ -10,4 +10,15 @@ img#header_image {
 
 div#search_form {
   padding-top: 50px;
+}
+
+input#inputQuery {
+  height: 50px;
+}
+
+#search_form button {
+  color: white;
+  margin-top: 20px;
+  width: 300px;
+  padding: 20px;
 }
