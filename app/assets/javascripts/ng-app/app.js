@@ -8,7 +8,7 @@ angular
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'index.html',
+        templateUrl: 'home.html',
         controller: 'HomeController as home'
       })
       .state('about', {
