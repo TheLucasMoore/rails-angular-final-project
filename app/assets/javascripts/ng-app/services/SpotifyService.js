@@ -1,15 +1,15 @@
-function SpotifyService() {
+function SpotifyService($http) {
 
-  this.searchFor = function() {
+  var url = 'https://api.spotify.com/v1/'
 
+  this.searchFor = function(query) {
+    var searchTerm = query.replace(' ','%20');
+    return $http.get(url + 'search?q=' + searchTerm + '&type=artist');
   };
 
-  this.getArtistData = function() {
-
-  };
-
-  this.getSongData = function() {
-
+  this.getArtistTracks = function(id) {
+    console.log(url + 'artists/' + id + '/top-tracks?country=US')
+    return $http.get(url + 'artists/' + id + '/top-tracks?country=US')
   };
 };
 
