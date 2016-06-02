@@ -15,3 +15,7 @@ div#search_form {
 input#inputQuery {
   height: 50px;
 }
+
+div#search_result {
+  padding-top: 400px;
+}

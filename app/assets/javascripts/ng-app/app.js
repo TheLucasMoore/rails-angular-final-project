@@ -2,7 +2,8 @@ angular
   .module('app', [
     'ui.router',
     'ngAnimate',
-    'templates'
+    'templates',
+    'ngSanitize'
     ])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

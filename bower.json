@@ -4,7 +4,8 @@
     "dependencies": {
       "angular": "latest",
       "angular-ui-router": "latest",
-      "angular-animate": "latest"
+      "angular-animate": "latest",
+      "angular-sanitize": "latest"
     }
   },
   "vendor": {

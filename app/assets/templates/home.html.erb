@@ -10,4 +10,17 @@
       <input type="submit" class="btn btn-primary btn-lg" value="$earch">
     </form>
   </div>
+
+  <div class="col-lg-6 col-lg-offset-3" id="search_result" ng-if="home.artist">
+    <img src="{{ home.spotifyImage }}">
+    <h2>{{ home.artist }}</h2>
+    <div ng-bind-html="home.bio"></div>
+    <h2>{{ home.playcount }} estimated plays</h2>
+
+    <div id="track_art" ng-repeat="track in home.tracks" ng-if="home.tracks">
+      <h6>{{ track.name }}</h6>
+      <img src="{{ track.album.images[1].url }}">
+      </div>
+    </div>
+
 </div>

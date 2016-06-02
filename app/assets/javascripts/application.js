@@ -14,6 +14,7 @@
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-sanitize
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap

@@ -8,7 +8,6 @@ function SpotifyService($http) {
   };
 
   this.getArtistTracks = function(id) {
-    console.log(url + 'artists/' + id + '/top-tracks?country=US')
     return $http.get(url + 'artists/' + id + '/top-tracks?country=US')
   };
 };
