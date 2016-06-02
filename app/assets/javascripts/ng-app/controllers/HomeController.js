@@ -32,7 +32,7 @@ function HomeController(LastfmService, SpotifyService) {
           .getArtistTracks(spotifyID)
           .then(function(response) {
             // console.log(response);
-            ctrl.tracks = response.data.tracks
+            ctrl.tracks = response.data.tracks.slice(0, 4)
           })
       })
   }

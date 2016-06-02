@@ -1,0 +1,36 @@
+#header {
+  text-align: center;
+  margin-top: 7%;
+}
+
+div#search_form {
+  padding-top: 50px;
+}
+
+input#input_query {
+  height: 50px;
+}
+
+div#search_result {
+  padding-top: 0px;
+}
+
+img#artist_image {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+h1#biggest_text {
+  text-align: center;
+  font-size: 100px;
+}
+
+h1#big_text {
+  text-align: center;
+  font-size: 50px;
+}
+
+a#reset_artist {
+  text-align: center;
+  margin-left: 150px;
+}

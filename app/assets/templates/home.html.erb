@@ -1,26 +1,53 @@
-<div class="top_index">
-<%= image_tag("logo.png", :alt => "spotify logo", :id => "header_image") %>
+<div class="container">
 
-  <h1>How much money do artists make on Spotify?</h1>
-  <h3>Find out for yourself!</h3>
-
-  <div class="col-lg-6 col-lg-offset-3" id="search_form">
-    <form ng-submit="home.submit()" >
-      <input type="text" id="inputQuery" class="form-control" placeholder="Enter an Artist You Love" required="required" ng-model="home.query">
-      <input type="submit" class="btn btn-primary btn-lg" value="$earch">
-    </form>
+  <div class="row">
+    <div class="col-sm-12 col-lg-12" id="header">
+    <%= image_tag("logo.png", :alt => "spotify logo", :id => "header_image") %>
+    <h1>How much money do artists make on Spotify?</h1>
+    <h3>Find out for yourself!</h3>
+    </div>
   </div>
 
-  <div class="col-lg-6 col-lg-offset-3" id="search_result" ng-if="home.artist">
-    <img src="{{ home.spotifyImage }}">
-    <h2>{{ home.artist }}</h2>
-    <div ng-bind-html="home.bio"></div>
-    <h2>{{ home.playcount }} estimated plays</h2>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3" id="search_form">
+      <form ng-submit="home.submit()" >
+        <input type="text" id="input_query" class="form-control" placeholder="Enter an Artist You Love" required="required" ng-model="home.query">
+        <input type="submit" class="btn btn-primary btn-lg" value="$earch">
+      </form>
+    </div>
+  </div>
 
-    <div id="track_art" ng-repeat="track in home.tracks" ng-if="home.tracks">
-      <h6>{{ track.name }}</h6>
-      <img src="{{ track.album.images[1].url }}">
+  <div class="row" ng-if="home.artist">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <h1 id="biggest_text">{{ home.spotifyName }}</h1>
+    </div>
+  </div>
+
+  <div class="row" ng-if="home.artist">
+    <div class="col-lg-6 col-sm-12">
+      <img id="artist_image" class="img-circle" src="{{ home.spotifyImage }}">
+      <p><a id="reset_artist" href="#">Wrong artist?</a></p>
+    </div>
+
+    <div class="col-lg-6 col-sm-12">
+        <p ng-bind-html="home.bio"></p>
+        <h2>{{ home.playcount }} estimated plays</h2>
+    </div>
+  </div>
+
+  <div class="row" ng-if="home.artist">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <h1 id="big_text">the maker of such hits as:</h1>
+    </div>
+  </div>
+
+  <div class="row" ng-if="home.tracks">
+    <div ng-repeat="track in home.tracks">
+      <div class="col-lg-3 col-md-4 col-xs-6">  
+        <h3>{{ track.name }}</h3>
+        <img class="img-responsive" src="{{ track.album.images[1].url }}">
       </div>
     </div>
+  </div>
 
 </div>
