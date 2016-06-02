@@ -9,10 +9,10 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3" id="search_form">
+    <div class="col-lg-6 col-md-6  col-md-offset-3 col-lg-offset-3" id="search_form">
       <form ng-submit="home.submit()" >
         <input type="text" id="input_query" class="form-control" placeholder="Enter an Artist You Love" required="required" ng-model="home.query">
-        <input type="submit" class="btn btn-primary btn-lg" value="$earch">
+        <input type="submit" id="submit" class="btn btn-primary btn-lg" value="$earch">
       </form>
     </div>
   </div>
@@ -20,17 +20,17 @@
   <div class="row" ng-if="home.artist">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <h1 id="biggest_text">{{ home.spotifyName }}</h1>
+    <p><a id="reset_artist" href="#">Wrong artist?</a></p>
     </div>
   </div>
 
   <div class="row" ng-if="home.artist">
-    <div class="col-lg-6 col-sm-12">
-      <img id="artist_image" class="img-circle" src="{{ home.spotifyImage }}">
-      <p><a id="reset_artist" href="#">Wrong artist?</a></p>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <img id="artist_image" class="img-circle center-block" src="{{ home.spotifyImage }}">
     </div>
 
-    <div class="col-lg-6 col-sm-12">
-        <p ng-bind-html="home.bio"></p>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <p id="artist_bio" ng-bind-html="home.bio"></p>
         <h2>{{ home.playcount }} estimated plays</h2>
     </div>
   </div>
@@ -44,8 +44,8 @@
   <div class="row" ng-if="home.tracks">
     <div ng-repeat="track in home.tracks">
       <div class="col-lg-3 col-md-4 col-xs-6">  
-        <h3>{{ track.name }}</h3>
         <img class="img-responsive" src="{{ track.album.images[1].url }}">
+        <h3>{{ track.name }}</h3>
       </div>
     </div>
   </div>
