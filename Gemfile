@@ -12,7 +12,7 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-spotify'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
