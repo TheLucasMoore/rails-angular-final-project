@@ -1,7 +1,6 @@
-var topTracks(track) = {
+var TopTracks = {
   bindings: {
     info: '='
-    console.log(info)
   },
   templateUrl: 'track.html',
   controllerAs: 'track'

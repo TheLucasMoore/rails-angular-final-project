@@ -1,16 +1,19 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem "figaro"
 
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
 gem 'active_model_serializers'
-# gem 'angularjs-rails', '~> 1.5', '>= 1.5.5'
 
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-spotify'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'

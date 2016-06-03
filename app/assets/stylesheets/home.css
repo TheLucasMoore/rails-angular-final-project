@@ -1,5 +1,8 @@
-#header {
+body h1, h2, p {
   text-align: center;
+}
+
+#header {
   margin-top: 7%;
 }
 
@@ -32,16 +35,12 @@ img#artist_image {
 }
 
 h1#biggest_text {
-  text-align: center;
   font-size: 100px;
 }
 
 h1#big_text {
-  text-align: center;
   font-size: 50px;
 }
 
 a#reset_artist {
-  text-align: center;
-  margin-left: 45%;
 }

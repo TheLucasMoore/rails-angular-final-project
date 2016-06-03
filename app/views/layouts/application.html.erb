@@ -9,6 +9,10 @@
   </head>
 
   <body ng-app="app">
+    <% if notice || alert %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

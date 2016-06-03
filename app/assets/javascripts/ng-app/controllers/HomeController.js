@@ -28,7 +28,7 @@ function HomeController(LastfmService, SpotifyService) {
         ctrl.spotifyName = resp.data.artists.items[0].name
         ctrl.spotifyImage = resp.data.artists.items[0].images[0].url
 
-        SpotifyService
+        SpotifyService // next search to get spotify top-track data for right artist
           .getArtistTracks(spotifyID)
           .then(function(response) {
             // console.log(response);
