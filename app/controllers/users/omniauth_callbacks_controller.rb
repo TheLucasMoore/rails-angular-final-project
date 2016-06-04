@@ -16,7 +16,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     top = spotify_user.top_artists.slice(0,5)
     Artist.parse_from_user(@user, top)
-
+    Genre.scrape_genres(top)
    end
 
   def failure

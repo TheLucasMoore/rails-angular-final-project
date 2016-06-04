@@ -6,3 +6,17 @@ img#artists {
   max-width: 300px;
   max-height: 300px;
 }
+
+div.artists {
+  margin: 15px;
+  background-size: 350px;
+  background-position: middle;
+  background-repeat: none;
+  height: 350px;
+  width: 350px;
+  overflow: hidden;
+}
+
+.artists h1 {
+  color: rgb(29, 30, 26);
+}

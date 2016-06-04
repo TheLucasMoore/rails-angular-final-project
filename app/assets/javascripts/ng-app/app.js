@@ -32,6 +32,11 @@ angular
         url: '/artists',
         templateUrl: 'artists.html',
         controller: 'ArtistsController as artists',
+      })
+      .state('genres', {
+        url: '/genres',
+        templateUrl: 'genres.html',
+        controller: 'GenresController as genres',
       });
       $urlRouterProvider.otherwise("/");
   })

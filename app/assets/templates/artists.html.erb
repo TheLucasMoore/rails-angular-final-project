@@ -1,9 +1,13 @@
 <h1>Browse Artists</h1>
 <p>Here are all the top artists our users have listened to this month.</p>
 
-<div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="artist in artists.all">
-    <img id="artists" class="img-responsive img-thumbnail center-block" src="{{ artist.image }}">
+<div class="col-lg-3 col-md-4 col-xs-12" ng-repeat="artist in artists.all">
+    <div class="artists" style="background-image:url({{ artist.image }})">
       <h1><a href="{{ artist.link }}" target="_blank">{{ artist.name }}</a></h1>
+      <ul>
+        <li ng-repeat="genre in artist.genres">{{ genre.name }}</a></li>
+      </ul>
+      </div>
   </div>
   </div>
 </div>
