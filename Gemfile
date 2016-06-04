@@ -14,7 +14,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-spotify'
-gem 'restclient'
+gem 'rspotify'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
