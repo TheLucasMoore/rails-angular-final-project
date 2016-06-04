@@ -1,9 +1,15 @@
+# require 'json'
+# require 'restclient'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:spotify]
+
+  has_many :artist_users
+  has_many :artists, through: :artist_users
 
   def self.from_omniauth(auth)
   # raise auth.credentials.inspect

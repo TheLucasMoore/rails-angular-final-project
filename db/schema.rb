@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604013624) do
+ActiveRecord::Schema.define(version: 20160604032522) do
+
+  create_table "artist_users", id: false, force: :cascade do |t|
+    t.integer "user_id",   null: false
+    t.integer "artist_id", null: false
+  end
+
+  add_index "artist_users", ["artist_id"], name: "index_artist_users_on_artist_id"
+  add_index "artist_users", ["user_id"], name: "index_artist_users_on_user_id"
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -23,12 +31,6 @@ ActiveRecord::Schema.define(version: 20160604013624) do
     t.integer  "followers"
     t.integer  "popularity"
     t.string   "uri"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
