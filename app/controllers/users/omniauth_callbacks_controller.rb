@@ -16,6 +16,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     top = spotify_user.top_artists
     Artist.parse_from_user(@user, top)
+
    end
 
   def failure
