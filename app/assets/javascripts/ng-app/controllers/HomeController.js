@@ -24,7 +24,7 @@ function HomeController(LastfmService, SpotifyService) {
     SpotifyService // first search to grab artist ID from Spotify
       .searchFor(query)
       .then(function(resp) {
-        console.log(resp)
+        // console.log(resp)
         var spotifyID = resp.data.artists.items[0].id
         ctrl.spotifyName = resp.data.artists.items[0].name
         ctrl.spotifyImage = resp.data.artists.items[0].images[0].url
@@ -32,13 +32,12 @@ function HomeController(LastfmService, SpotifyService) {
         SpotifyService // next search to get spotify top-track data for right artist
           .getArtistTracks(spotifyID)
           .then(function(response) {
-            // console.log(response);
+            console.log(response.data.tracks);
             ctrl.tracks = response.data.tracks.slice(0, 4)
           })
       })
   }
 }
-
 
 angular
   .module('app')

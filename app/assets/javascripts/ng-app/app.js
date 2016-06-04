@@ -27,6 +27,11 @@ angular
         url: '/login',
         templateUrl: 'login.html',
         controller: 'LoginController as login',
+      })
+      .state('artists', {
+        url: '/artists',
+        templateUrl: 'artists.html',
+        controller: 'ArtistsController as artists',
       });
       $urlRouterProvider.otherwise("/");
   })

@@ -44,7 +44,7 @@
   <div class="row" ng-if="home.tracks">
     <div ng-repeat="track in home.tracks">
       <div class="col-lg-3 col-md-4 col-xs-6">  
-        <img class="img-responsive" src="{{ track.album.images[1].url }}">
+        <img id="play_track" class="img-responsive" src="{{ track.album.images[1].url }}">
         <h3>{{ track.name }}</h3>
       </div>
     </div>

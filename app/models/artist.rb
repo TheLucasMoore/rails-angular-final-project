@@ -9,11 +9,13 @@ class Artist < ActiveRecord::Base
       newbie.name = artist.name
       newbie.image = artist.images[0]["url"]
       newbie.popularity = artist.popularity
-      newbie.link = artist.href
+      newbie.link = artist.external_urls["spotify"]
       newbie.uri = artist.uri
       newbie.followers = artist.followers["total"]
 
       user.artists << newbie
+
+      # GENRES?
 
       newbie.save
       user.save

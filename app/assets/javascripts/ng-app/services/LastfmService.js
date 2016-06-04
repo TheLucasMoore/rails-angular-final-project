@@ -9,7 +9,7 @@ function LastfmService($http) {
 
   this.getArtist = function(artist) {
     return $http.get(url + "?method=artist.getinfo&artist=" + artist + "&api_key=" + API_KEY + "&format=json")
-  }
+  };
 }
 
 angular
