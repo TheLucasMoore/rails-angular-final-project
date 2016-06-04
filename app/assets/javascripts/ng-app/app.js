@@ -3,7 +3,8 @@ angular
     'ui.router',
     'ngAnimate',
     'templates',
-    'ngSanitize'
+    'ngSanitize',
+    'chart.js'
     ])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

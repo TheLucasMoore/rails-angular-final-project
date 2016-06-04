@@ -14,7 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
 
-    top = spotify_user.top_artists
+    top = spotify_user.top_artists.slice(0,5)
     Artist.parse_from_user(@user, top)
 
    end

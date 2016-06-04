@@ -15,6 +15,8 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require angular-sanitize
+//= require Chart
+//= require angular-chart
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap

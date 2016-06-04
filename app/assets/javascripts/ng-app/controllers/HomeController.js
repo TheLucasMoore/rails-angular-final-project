@@ -17,6 +17,7 @@ function HomeController(LastfmService, SpotifyService) {
             // console.log(response);
             ctrl.bio = response.data.artist.bio.summary
             ctrl.playcount = response.data.artist.stats.playcount
+            ctrl.earnings = (ctrl.playcount * 0.007).toLocaleString()
           })
       })
 
