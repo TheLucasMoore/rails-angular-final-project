@@ -6,9 +6,13 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:spotify]
 
   def self.from_omniauth(auth)
+  # raise auth.credentials.inspect
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user.name = auth.info.name
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
+    user.access_token = auth.credentials.token
+    user.refresh_token = auth.credentials.refresh_token
     end
   end
 
