@@ -3,16 +3,10 @@
 
 <div class="container">
   <div class="row">
-  <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12" ng-repeat="artist in artists.all">
-    <div class="artists" style="background-image:url({{ artist.image }})">
-      <h1><a href="{{ artist.link }}" target="_blank">{{ artist.name }}</a></h1>
-    </div>
-      <ul class="genres">
-        <li ng-repeat="genre in artist.genres">{{ genre.name }}</a></li>
-      </ul>
+    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 artists image" ng-repeat="artist in artists.all">
+      <div class="artists overlay" style="background-image:url({{ artist.image }})">
+        <h3><a href="{{ artist.link }}" target="_blank">{{ artist.name }}</a></h3>
+      </div>
     </div>
   </div>
 </div>
-  </div>
-
-  </div>

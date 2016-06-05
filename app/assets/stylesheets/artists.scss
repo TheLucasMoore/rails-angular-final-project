@@ -7,9 +7,19 @@ img#artists {
   max-height: 300px;
 }
 
+.image:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.9;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 div.artists {
-  margin: 5px;
-  margin-bottom: 200px;
+  padding-right: 10px;
   background-size: 300px;
   background-position: center;
   height: 200px;
@@ -17,13 +27,7 @@ div.artists {
   overflow: hidden;
 }
 
-.artists h1 {
-  height: 200px;
-  width: 200px;
-}
-
-ul.genres {
-  visibility: show;
-  margin-top: -200px;
+div.artists h3 {
+  margin-top: 80px;
   text-align: center;
 }
