@@ -1,11 +1,25 @@
 <h1>Browse Genres</h1>
 <p>Here are all the top genres our users have listened to this month.</p>
 
-<div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="genre in genres.all">
-      <h1>{{ genre.name }}</a></h1>
-      <ul>
-        <li ng-repeat="artist in genre.artists"><a href="{{ artist.link }}">{{ artist.name }}</a></li>
-      </ul>
-  </div>
+<div class="container">
+  <div class="row">
+  <input placeholder="Search for a genre" ng-model="search" class="form-control">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Genre</th>
+            <th>Artists</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="genre in genres.all | filter: search">
+            <td>{{ genre.name }}</td>
+            <td><a ng-repeat="artist in genre.artists" target="_blank" href="{{ artist.link }}">{{ artist.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+

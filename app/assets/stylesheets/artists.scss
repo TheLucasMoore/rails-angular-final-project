@@ -8,15 +8,22 @@ img#artists {
 }
 
 div.artists {
-  margin: 15px;
-  background-size: 350px;
-  background-position: middle;
-  background-repeat: none;
-  height: 350px;
-  width: 350px;
+  margin: 5px;
+  margin-bottom: 200px;
+  background-size: 300px;
+  background-position: center;
+  height: 200px;
+  width: 200px;
   overflow: hidden;
 }
 
 .artists h1 {
-  color: rgb(29, 30, 26);
+  height: 200px;
+  width: 200px;
+}
+
+ul.genres {
+  visibility: show;
+  margin-top: -200px;
+  text-align: center;
 }
