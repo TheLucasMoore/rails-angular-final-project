@@ -7,6 +7,10 @@ function BackEndService($http) {
   this.getGenres = function() {
     return $http.get('http://localhost:3000/genres')
   };
+
+  this.getUserArtists = function(id) {
+    return $http.get('http://localhost:3000/users/' + id)
+  }
 }
 
 angular

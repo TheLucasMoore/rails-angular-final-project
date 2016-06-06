@@ -17,7 +17,7 @@ class Artist < ActiveRecord::Base
       newbie.uri = artist.uri
       newbie.followers = artist.followers["total"]
 
-      user.artists << newbie
+      user.artists << newbie unless user.artists.include?(newbie)
 
       newbie.save
       user.save

@@ -23,6 +23,11 @@ angular
         templateUrl: 'charts.html',
         controller: 'ChartsController as chart',
       })
+      .state('userChart', {
+        url: '/chart/:id',
+        templateUrl: 'userChart.html',
+        controller: 'UserChartController as user',
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'login.html',
