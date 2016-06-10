@@ -1,1 +1,22 @@
-<h1>ABOUT</h1>
+<h1>About</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-2 col-md-9 col-md-offset-2 col-sm-12" id="left">
+
+  <p>This project was created by <a href="http://dev.thelucasmoore.com">Lucas Moore</a> as the final project at <a href="http://learn.co">Learn.co</a>.</p>
+
+  <p>It is built with a rails backend and angular front end. It also utilizes Bootstrap, Devise and Chart.js. I also pull data from the Spotify API and Last.fm API.</p>
+
+  <h2>About Revenue Calculations</h2>
+
+  <p>The original concept was to allow users to calculate how much money they have personally contributed to an artist's spotify earnings. I realized that <a href="https://developer.spotify.com/web-api/endpoint-reference/" target="_blank">Spotify's API</a> doesn't include the play count or total number of streams in the data. Not be dissuaded, I decided to pull data from the <a href="http://www.last.fm/api" target="_blank">Last.fm API</a> and supplement the Spotify information with artist bios and a total playcount.</p>
+
+
+  <p>Spotify does detail their royalties payout, which says that an artist can make between <strong>$0.006 and $0.0084</strong> per stream. So I calculate one play as <strong>0.007 cents</strong>, which is the median value. They playcount is the number of plays an artist has on Last.fm, which means these calculations aren't reliable as an estimate of Spotify revenue, it's just a mocked-up concept.</p>
+
+  <p>If, however, Spotify does include <a href="https://community.spotify.com/t5/Live-Ideas/Personal-play-count-for-songs/idi-p/506618" target="_blank">personal play counts</a> in their API, I could easily convert the API requests to calculate the personal earnings accurately.</p>
+
+    </div>
+  </div>
+</div>

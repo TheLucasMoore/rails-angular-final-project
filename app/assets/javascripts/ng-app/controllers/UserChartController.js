@@ -19,7 +19,8 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
         .getArtist(name)
         .then(function(resp) {
           var playcount = resp.data.artist.stats.playcount
-          listens.push(playcount)
+          console.log(resp, playcount)
+          listens.push(playcount * 0.007)
         })
       };
     })
