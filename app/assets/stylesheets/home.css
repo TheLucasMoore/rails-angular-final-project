@@ -2,6 +2,10 @@ body h1, h2, p {
   text-align: center;
 }
 
+img.playing {
+    border: 5px solid rgb(87, 197, 78);
+}
+
 #header {
   margin-top: 7%;
 }

@@ -13,24 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20160604215555) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "artist_genres", id: false, force: :cascade do |t|
     t.integer "artist_id", null: false
     t.integer "genre_id",  null: false
   end
 
-  add_index "artist_genres", ["artist_id"], name: "index_artist_genres_on_artist_id", using: :btree
-  add_index "artist_genres", ["genre_id"], name: "index_artist_genres_on_genre_id", using: :btree
+  add_index "artist_genres", ["artist_id"], name: "index_artist_genres_on_artist_id"
+  add_index "artist_genres", ["genre_id"], name: "index_artist_genres_on_genre_id"
 
   create_table "artist_users", id: false, force: :cascade do |t|
     t.integer "user_id",   null: false
     t.integer "artist_id", null: false
   end
 
-  add_index "artist_users", ["artist_id"], name: "index_artist_users_on_artist_id", using: :btree
-  add_index "artist_users", ["user_id"], name: "index_artist_users_on_user_id", using: :btree
+  add_index "artist_users", ["artist_id"], name: "index_artist_users_on_artist_id"
+  add_index "artist_users", ["user_id"], name: "index_artist_users_on_user_id"
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -71,9 +68,9 @@ ActiveRecord::Schema.define(version: 20160604215555) do
     t.string   "name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["provider"], name: "index_users_on_provider"
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["uid"], name: "index_users_on_uid"
 
 end
