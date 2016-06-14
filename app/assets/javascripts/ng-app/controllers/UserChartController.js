@@ -1,33 +1,57 @@
 function UserChartController($scope, $stateParams, BackEndService, LastfmService) {
 
   var ctrl = this;
-
   var userId = $stateParams.id
-  var names = [];
-  var listens = [];
+
+  function Artist(name, streams) {
+    this.name = name;
+    this.streams = streams;
+  }
+  // these arrays will keep everything neat and tidy
+  var artists = new Array();
+  var names = new Array();
+  var earnings = new Array();
 
   BackEndService
     .getUserArtists(userId)
     .then(function(response) {
-      var data = response.data;
-      ctrl.username = data.name;
-      for(i = 0; i < data.artists.length; i++) {
-        var name = data.artists[i].name
-        names.push(name)
-        // Call LastFM API to grab listens for each artist
-        LastfmService
-        .getArtist(name)
-        .then(function(resp) {
-          var playcount = resp.data.artist.stats.playcount
-          console.log(resp, playcount)
-          listens.push(playcount * 0.007)
-        })
-      };
-    })
+      // Spotify Username of User
+      ctrl.username = response.data.name;
 
+      // Loop through artists names
+      for(i = 0; i < response.data.artists.length; i++) {
+        var name = response.data.artists[i].name;
+        getListens(name);
+      }
+    });
+
+  function getListens(name) {
+    //Call LastFM API to grab listens for each artist
+    //Doing this in the front end allows them to by dynamically updated
+    LastfmService
+    .getArtist(name)
+    .then(function(resp) {
+      playcount = parseInt(resp.data.artist.stats.playcount)
+      var artist = new Artist(name, playcount)
+      artists.push(artist);
+      if (artists.length >= 5) {
+        populateArrays(artists);
+        }
+    });
+  }
+
+  // Pull out names and listens into arrays for ChartJS
+  function populateArrays(artists) {
+    for(i = 0; i < artists.length; i++) {
+        names[i] = artists[i].name
+        earnings[i] = (artists[i].streams * 0.007)
+      }
+    }
+
+  // variables to populate ChartJS with arrays of artists and money
   $scope.labels = names;
   $scope.data = [
-    listens
+    earnings
   ];
 }
 
