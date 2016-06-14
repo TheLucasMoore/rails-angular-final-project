@@ -1,4 +1,4 @@
-body h1, h2, p {
+body h1, h2, h3, h4, h5, p {
   text-align: center;
 }
 
@@ -26,7 +26,7 @@ input#submit {
 }
 
 div#search_result {
-  padding-top: 0px;
+  padding-top: 20%;
 }
 
 img#artist_image {

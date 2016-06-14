@@ -2,6 +2,15 @@ function HomeController(LastfmService, SpotifyService) {
   var ctrl = this;
   ctrl.query = '';
 
+  var verbs = ["architect", "creator", "originator", "maker", "composer", "writer"];
+  var nouns = ["hits", "bangers", "winners", "knockouts", "chart toppers", "tunes"];
+  var random = Math.floor(Math.random() * 5) + 0;
+
+  ctrl.verb = verbs[random];
+  ctrl.noun = nouns[random];
+
+  console.log(ctrl.noun, ctrl.verb)
+
   ctrl.submit = function() {
     var query = ctrl.query;
 
@@ -32,10 +41,12 @@ function HomeController(LastfmService, SpotifyService) {
         SpotifyService // next search to get spotify top-track data for right artist
           .getArtistTracks(spotifyID)
           .then(function(response) {
-            console.log(response.data.tracks);
+            // console.log(response.data.tracks);
             ctrl.tracks = response.data.tracks.slice(0, 4)
           })
       })
+
+    $("#search_result").scrollTop($("#search_result")[0].scrollHeight);
   }
 }
 

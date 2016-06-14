@@ -16,10 +16,10 @@
     </div>
   </div>
 
-  <div class="row" ng-if="home.artist">
+  <div class="row" id="search_result" ng-if="home.artist">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <h1 id="biggest_text">{{ home.spotifyName }}</h1>
-    <p><a id="reset_artist" href="#">Wrong artist?</a></p>
+    <p><a id="reset_artist" href="#">Something look wrong?</a></p>
     </div>
   </div>
 
@@ -37,7 +37,8 @@
 
   <div class="row" ng-if="home.artist">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-    <h1 id="big_text">the maker of such hits as:</h1>
+    <h1 id="big_text">the {{home.verb}} of these {{home.noun}}:</h1>
+    <h4>Click to listen.</h4>
     </div>
   </div>
 
