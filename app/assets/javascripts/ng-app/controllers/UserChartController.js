@@ -56,7 +56,7 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
   ];
 }
 
-UserChartController.$inject ['$scope', '$stateParams', 'BackEndService', 'LastfmService']
+UserChartController.$inject = ['$scope', '$stateParams', 'BackEndService', 'LastfmService']
 
 angular
   .module('app')
