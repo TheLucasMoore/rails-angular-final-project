@@ -1,5 +1,4 @@
 function SpotifyController($scope) {
-  SpotifyController.$inject = ['$scope'];
   var audioObject = null;
 
   window.addEventListener('click', function (e) {
@@ -25,6 +24,8 @@ function SpotifyController($scope) {
       }
   });
 }
+
+SpotifyController.$inject = ['$scope'];
 
 angular
   .module('app')

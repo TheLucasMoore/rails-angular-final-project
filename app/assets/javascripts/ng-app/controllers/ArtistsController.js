@@ -1,5 +1,4 @@
 function ArtistsController(BackEndService) {
-  ArtistsController.$inject = ['BackEndService'];
   var ctrl = this;
   var artists = []
 
@@ -15,6 +14,8 @@ function ArtistsController(BackEndService) {
   init()
 
 };
+
+ArtistsController.$inject = ['BackEndService'];
 
 angular
   .module('app')

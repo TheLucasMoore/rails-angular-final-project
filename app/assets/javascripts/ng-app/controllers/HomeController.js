@@ -1,5 +1,4 @@
 function HomeController(LastfmService, SpotifyService) {
-  HomeController.$inject = ['LastfmService', 'SpotifyService'];
   var ctrl = this;
   ctrl.query = '';
 
@@ -50,6 +49,8 @@ function HomeController(LastfmService, SpotifyService) {
     $("#search_result").scrollTop($("#search_result")[0].scrollHeight);
   }
 }
+
+HomeController.$inject = ['LastfmService', 'SpotifyService'];
 
 angular
   .module('app')

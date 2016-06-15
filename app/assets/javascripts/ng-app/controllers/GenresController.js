@@ -1,5 +1,4 @@
 function GenresController(BackEndService) {
-  GenresController.$inject = ['BackEndService'];
   var ctrl = this;
   var artists = []
 
@@ -13,8 +12,9 @@ function GenresController(BackEndService) {
   };
 
   init()
-
 };
+
+GenresController.$inject = ['BackEndService'];
 
 angular
   .module('app')

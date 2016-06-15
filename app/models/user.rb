@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
     user.name = auth.info.name
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
-    user.access_token = auth.credentials.token
-    user.refresh_token = auth.credentials.refresh_token
+    # user.access_token = auth.credentials.token
+    # user.refresh_token = auth.credentials.refresh_token
     end
   end
 

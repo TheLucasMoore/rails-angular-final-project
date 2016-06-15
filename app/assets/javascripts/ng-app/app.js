@@ -15,8 +15,7 @@ angular
       })
       .state('about', {
         url: '/about',
-        templateUrl: 'about.html',
-        controller: 'StaticController as static',
+        templateUrl: 'about.html'
       })
       .state('charts', {
         url: '/charts',
