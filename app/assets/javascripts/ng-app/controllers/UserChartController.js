@@ -2,6 +2,7 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
 
   var ctrl = this;
   var userId = $stateParams.id
+  var chartLimit = 5;
 
   function Artist(name, streams) {
     this.name = name;
@@ -19,7 +20,7 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
       ctrl.username = response.data.name;
 
       // Loop through artists names
-      for(i = 0; i < response.data.artists.length; i++) {
+      for(i = 0; i < chartLimit; i++) {
         var name = response.data.artists[i].name;
         getListens(name);
       }
@@ -34,7 +35,7 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
       playcount = parseInt(resp.data.artist.stats.playcount)
       var artist = new Artist(name, playcount)
       artists.push(artist);
-      if (artists.length >= 5) {
+      if (artists.length >= chartLimit) {
         populateArrays(artists);
         }
     });

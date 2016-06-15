@@ -42,6 +42,10 @@ angular
         url: '/genres',
         templateUrl: 'genres.html',
         controller: 'GenresController as genres',
+      })
+      .state('genres.list', {
+        url: '/list',
+        templateUrl: 'genres.list.html'
       });
       $urlRouterProvider.otherwise("/");
   })

@@ -1,6 +1,6 @@
 function spotify() {
   return {
-    templateUrl: 'spotify.html',
+    templateUrl: 'directives/spotify.html',
     scope: {
       info: '='
     },

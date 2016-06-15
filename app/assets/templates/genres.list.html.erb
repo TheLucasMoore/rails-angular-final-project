@@ -1,0 +1,16 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Genre</th>
+        <th>Artists</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="genre in genres.all | filter: search">
+        <td>{{ genre.name }}</td>
+        <td><a ng-repeat="artist in genre.artists" target="_blank" href="{{ artist.link }}">{{ artist.name }} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
