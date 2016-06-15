@@ -1,4 +1,5 @@
 function GenresController(BackEndService) {
+  GenresController.$inject = ['BackEndService'];
   var ctrl = this;
   var artists = []
 

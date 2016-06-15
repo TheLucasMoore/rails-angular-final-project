@@ -1,4 +1,6 @@
 function LoginController($scope) {
+  LoginController.$inject = ['$scope'];
+
   // The Log In feature is on the backend
   $scope.labels = ['Beyonce', 'Drake', 'Ska to Catch Them All', 'Vanilla Sake', 'Andrew Bird'];
   $scope.data = [

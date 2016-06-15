@@ -1,4 +1,5 @@
 function HomeController(LastfmService, SpotifyService) {
+  HomeController.$inject = ['LastfmService', 'SpotifyService'];
   var ctrl = this;
   ctrl.query = '';
 

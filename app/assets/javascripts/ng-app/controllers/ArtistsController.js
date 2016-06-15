@@ -1,4 +1,5 @@
 function ArtistsController(BackEndService) {
+  ArtistsController.$inject = ['BackEndService'];
   var ctrl = this;
   var artists = []
 
