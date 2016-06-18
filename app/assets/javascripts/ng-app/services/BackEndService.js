@@ -1,15 +1,23 @@
 function BackEndService($http) {
 
+  // return artist index
   this.getArtists = function() {
-    return $http.get('http://localhost:3000/artists')
+    return $http.get('/artists')
   };
 
+  // return artist show page by id
+  this.getArtist = function(id) {
+    return $http.get('/artists/' + id)
+  };
+
+  // return genres index
   this.getGenres = function() {
-    return $http.get('http://localhost:3000/genres')
+    return $http.get('/genres')
   };
 
+  // return a user's set of top artists
   this.getUserArtists = function(id) {
-    return $http.get('http://localhost:3000/users/' + id)
+    return $http.get('/users/' + id)
   }
 }
 

@@ -37,6 +37,11 @@ angular
         templateUrl: 'artists.html',
         controller: 'ArtistsController as artists',
       })
+      .state('artist/:id', {
+        url: '/artist/:id',
+        templateUrl: 'artist.html',
+        controller: 'ArtistController as artist',
+      })
       .state('genres', {
         url: '/genres',
         templateUrl: 'genres.html',

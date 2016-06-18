@@ -18,6 +18,9 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
     .then(function(response) {
       // Spotify Username of User
       ctrl.username = response.data.name;
+      // Set all variable equal to array of all a user's top artists
+      ctrl.all = response.data.artists
+      console.log(response)
 
       // Loop through artists names
       for(i = 0; i < chartLimit; i++) {
