@@ -15,6 +15,12 @@ function BackEndService($http) {
     return $http.get('/genres')
   };
 
+  // return genre show
+  this.getGenre = function(id) {
+    console.log(id)
+    return $http.get('/genres/' + id)
+  }
+
   // return a user's set of top artists
   this.getUserArtists = function(id) {
     return $http.get('/users/' + id)

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    <h1 id="biggest_text">{{ genre.name }}</h1>
+    <h2>Other artists in this genre:</h2>
+   <ul class="list-group">
+      <li class="list-group-item" ng-repeat="artist in genre.artists">
+        <a href="#/artist/{{artist.id}}">{{ artist.name }}</a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>

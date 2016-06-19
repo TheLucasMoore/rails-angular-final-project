@@ -8,8 +8,8 @@
     </thead>
     <tbody>
       <tr ng-repeat="genre in genres.all | filter: search">
-        <td>{{ genre.name }}</td>
-        <td><a ng-repeat="artist in genre.artists" target="_blank" href="{{ artist.link }}">{{ artist.name }} </td>
+        <td><a href="#/genre/{{ genre.id }}">{{ genre.name }}</a></td>
+        <td><a ng-repeat="artist in genre.artists" href="#/artist/{{ artist.id }}">{{ artist.name }} </td>
       </tr>
     </tbody>
   </table>

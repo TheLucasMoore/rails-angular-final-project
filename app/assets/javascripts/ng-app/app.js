@@ -32,22 +32,27 @@ angular
         templateUrl: 'login.html',
         controller: 'LoginController as login',
       })
-      .state('artists', {
+      .state('artists', { // INDEX PAGE
         url: '/artists',
         templateUrl: 'artists.html',
         controller: 'ArtistsController as artists',
       })
-      .state('artist/:id', {
+      .state('artist', { // SHOW PAGE
         url: '/artist/:id',
         templateUrl: 'artist.html',
         controller: 'ArtistController as artist',
       })
-      .state('genres', {
+      .state('genres', { // INDEX PAGE
         url: '/genres',
         templateUrl: 'genres.html',
         controller: 'GenresController as genres',
       })
-      .state('genres.list', {
+      .state('genre', { // SHOW PAGE
+        url: '/genre/:id',
+        templateUrl: 'genre.html',
+        controller: 'GenreController as genre',
+      })
+      .state('genres.list', { // NESTED PAGE
         url: '/list',
         templateUrl: 'genres.list.html'
       });

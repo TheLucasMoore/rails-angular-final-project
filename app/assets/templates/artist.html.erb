@@ -16,7 +16,7 @@
     <p id="artist_bio" ng-bind-html="artist.bio"></p>
     <h2>Genres:</h2>
     <ul>
-      <li ng-repeat="genre in artist.genres">{{ genre.name }}</li>
+      <li ng-repeat="genre in artist.genres"><a href="#/genre/{{ genre.id }}">{{ genre.name }}</a></li>
       <form>
       <input class="form-control" type="text" placeholder="Add Your Own Genre" />
       <input type="submit" value="Add">
