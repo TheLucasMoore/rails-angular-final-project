@@ -19,6 +19,10 @@ function BackEndService($http) {
   this.getUserArtists = function(id) {
     return $http.get('/users/' + id)
   }
+
+  this.postArtistListens = function(id, playcount) {
+    $http.patch('/artists/' + id, playcount)
+  }
 }
 
 angular

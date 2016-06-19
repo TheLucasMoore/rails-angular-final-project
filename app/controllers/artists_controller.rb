@@ -9,5 +9,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     render :json => @artist
   end
+
+  def update
+    @artist = Artist.find(params[:id])
+    count = params["_json"]
+    @artist.update(streams: count)
+    @artist.save
+  end
   
 end

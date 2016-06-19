@@ -11,6 +11,7 @@ function ArtistController($scope, $stateParams, BackEndService) {
         ctrl.image = artist.image
         ctrl.link = artist.link
         ctrl.uri = artist.uri
+        ctrl.genres = artist.genres
       })
   };
 
@@ -18,7 +19,7 @@ function ArtistController($scope, $stateParams, BackEndService) {
 
 };
 
-// ArtistsController.$inject = ['BackEndService'];
+ArtistController.$inject = ['$scope', '$stateParams', 'BackEndService'];
 
 angular
   .module('app')

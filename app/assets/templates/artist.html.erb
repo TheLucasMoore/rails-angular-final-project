@@ -1,11 +1,32 @@
 <div class="container">
   <div class="row">
   <div class="col-lg-8">
-
     <h1>{{ artist.name }}</h1>
     <p><a href="{{ artist.link }}">Spotify Profile</a></p>
-    <img id="artist_image" class="responsive-block" src="{{ artist.image }}">
-
   </div>
-</div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-4">
+    <img id="artist_image" class="responsive-block" src="{{ artist.image }}">
+  </div>
+  <div class="col-lg-7 col-lg-offset-1">
+    <h2>Genres:</h2>
+    <ul>
+      <li ng-repeat="genre in artist.genres">{{ genre.name }}</li>
+      <form>
+      <input class="form-control" type="text" placeholder="Add Your Own Genre" />
+      <input type="submit" value="Add">
+      </form>
+    </ul>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-8">
+    <form>
+    <input class="form-control" type="text" placeholder="Why do you love this artist?" />
+    <input type="submit" value="Comment">
+    </form>
+  </div>
 </div>

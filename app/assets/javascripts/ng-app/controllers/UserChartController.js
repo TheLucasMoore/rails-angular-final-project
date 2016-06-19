@@ -25,11 +25,12 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
       // Loop through artists names
       for(i = 0; i < chartLimit; i++) {
         var name = response.data.artists[i].name;
-        getListens(name);
+        var id = (response.data.artists[i].id)
+        getListens(name, id);
       }
     });
 
-  function getListens(name) {
+  function getListens(name, id) {
     //Call LastFM API to grab listens for each artist
     //Doing this in the front end allows them to by dynamically updated
     LastfmService
@@ -41,6 +42,8 @@ function UserChartController($scope, $stateParams, BackEndService, LastfmService
       if (artists.length >= chartLimit) {
         populateArrays(artists);
         }
+
+      BackEndService.postArtistListens(id, playcount)
     });
   }
 
