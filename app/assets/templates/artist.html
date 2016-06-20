@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+  <div class="col-lg-12">
+    <h1 id="biggest_text">{{ artist.name }}</h1>
+    <p><a href="{{ artist.link }}">Spotify Profile</a></p>
+    <h1>{{ artist.streams }} track streams.</h1>
+    <h1>$ {{ artist.earnings }} in revenue.</h1>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-4">
+    <img id="artist_image" class="responsive-block" src="{{ artist.image }}">
+  </div>
+  <div class="col-lg-7 col-lg-offset-1">
+    <p id="artist_bio" ng-bind-html="artist.bio"></p>
+    <h2>Genres:</h2>
+    <ul>
+      <li ng-repeat="genre in artist.genres"><a href="#/genre/{{ genre.id }}">{{ genre.name }}</a></li>
+      <form id="add_genre">
+      <input id="genre" class="form-control" type="text" placeholder="Add Your Own Genre" />
+      <input type="submit" value="Add">
+      </form>
+    </ul>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-12">
+    <h1 id="biggest_text">Comments</h1>
+    <form id="add_comment">
+    <input class="form-control" type="text" placeholder="Why do you love this artist?" />
+    <input type="submit" value="Comment">
+    </form>
+  </div>
+</div>

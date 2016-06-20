@@ -19,18 +19,17 @@ ActiveRecord::Schema.define(version: 20160616194838) do
   create_table "artist_genres", id: false, force: :cascade do |t|
     t.integer "artist_id", null: false
     t.integer "genre_id",  null: false
+    t.string  "comment"
   end
 
   add_index "artist_genres", ["artist_id"], name: "index_artist_genres_on_artist_id", using: :btree
   add_index "artist_genres", ["genre_id"], name: "index_artist_genres_on_genre_id", using: :btree
 
-  create_table "artist_users", id: false, force: :cascade do |t|
-    t.integer "user_id",   null: false
-    t.integer "artist_id", null: false
+  create_table "artist_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "artist_id"
+    t.string  "comment"
   end
-
-  add_index "artist_users", ["artist_id"], name: "index_artist_users_on_artist_id", using: :btree
-  add_index "artist_users", ["user_id"], name: "index_artist_users_on_user_id", using: :btree
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -49,11 +48,6 @@ ActiveRecord::Schema.define(version: 20160616194838) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "joing_table_user_artists", force: :cascade do |t|
-    t.string "user"
-    t.string "product"
   end
 
   create_table "users", force: :cascade do |t|
