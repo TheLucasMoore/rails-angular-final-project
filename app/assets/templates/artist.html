@@ -19,7 +19,7 @@
       <li ng-repeat="genre in artist.genres"><a href="#/genre/{{ genre.id }}">{{ genre.name }}</a></li>
     </ul>
       <form ng-submit="sendGenre()">
-      <input ng-model="newGenre" class="form-control" type="text" placeholder="Didja think of another genre for {{ artist.name}}?" />
+      <input ng-model="newGenre" class="form-control" type="text" placeholder="Can you think of another genre for {{ artist.name}}?" />
       <input type="submit" value="Add">
       </form>
   </div>
@@ -28,6 +28,11 @@
   <div class="row">
   <div class="col-lg-12">
     <h1 id="biggest_text">Comments</h1>
+    <ul class="list-group">
+      <li ng-repeat="comment in artist.comments" class="list-group-item">
+        <strong>{{ comment.uid }}:</strong> {{ comment.comment }}
+      </li>
+    </ul>
     <form ng-submit="sendComment()">
     <input ng-model="newComment" class="form-control" type="text" placeholder="Why do you love this artist?" />
     <input type="submit" value="Comment">

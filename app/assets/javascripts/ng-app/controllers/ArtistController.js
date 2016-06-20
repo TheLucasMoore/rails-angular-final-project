@@ -6,6 +6,11 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService, $
     this.name = name
   }
 
+  var Comment = function(uid, comment) {
+    this.uid = uid;
+    this.comment = comment;
+  }
+
   var init = function() {
 
     BackEndService
@@ -20,11 +25,13 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService, $
         ctrl.earnings = (artist.streams * 0.007).toLocaleString()
         ctrl.uri = artist.uri
         ctrl.genres = artist.genres
+        ctrl.comments = artist.artist_users.slice(1);
+
+        console.log(ctrl.comments)
 
       LastfmService
           .getArtist(name)
           .then(function(response) {
-            console.log(response)
             ctrl.bio = response.data.artist.bio.summary
       })
     })
@@ -40,8 +47,15 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService, $
 
   $scope.sendComment = function() {
     var data = JSON.stringify({artist_id: ctrl.id, comment: $scope.newComment})
+    var temp = new Comment("You just commented", $scope.newComment)
+    console.log(temp)
+    ctrl.comments.push(temp)
     BackEndService
       .postComment(data)
+  }
+
+  var userName = function(id) {
+    console.log("CALLED")
   }
 
   init()

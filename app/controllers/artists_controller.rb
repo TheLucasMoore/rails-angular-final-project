@@ -18,10 +18,12 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.find_by(id: params[:artist_id])
+    @artist = Artist.find(params[:artist_id])
     @user = current_user
+    @comment = params[:comment]
 
-    @artist.artist_users.build(:id => @artist.id, :user => @user, :comment => params[:comment])
+    @artist.artist_users.build(:user => @user, :comment => @comment, :uid => @user.uid)
+    @artist.save
   end
   
 end
