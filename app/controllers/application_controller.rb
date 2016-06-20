@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     id = resource.id.to_s
+    # raise resource.inspect
+    session[:id] = resource.id
     '/#/chart/' + id || root_path
   end
 

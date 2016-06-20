@@ -1,7 +1,8 @@
 function UserChartController($scope, $stateParams, BackEndService, LastfmService) {
 
   var ctrl = this;
-  var userId = $stateParams.id
+  var userId = $stateParams.id;
+  this.user = $stateParams.id;
   var chartLimit = 5;
 
   function Artist(name, streams) {

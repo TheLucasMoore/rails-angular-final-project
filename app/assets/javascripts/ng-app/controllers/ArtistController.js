@@ -34,9 +34,14 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService, $
     var data = JSON.stringify({id: ctrl.id, genre: $scope.newGenre})
     var temp = new Genre($scope.newGenre)
     ctrl.genres.push(temp)
-    console.log(ctrl.genres)
     BackEndService
       .postGenre(data)
+  }
+
+  $scope.sendComment = function() {
+    var data = JSON.stringify({artist_id: ctrl.id, comment: $scope.newComment})
+    BackEndService
+      .postComment(data)
   }
 
   init()

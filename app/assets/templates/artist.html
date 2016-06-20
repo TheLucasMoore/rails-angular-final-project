@@ -19,7 +19,7 @@
       <li ng-repeat="genre in artist.genres"><a href="#/genre/{{ genre.id }}">{{ genre.name }}</a></li>
     </ul>
       <form ng-submit="sendGenre()">
-      <input ng-model="newGenre" class="form-control" type="text" placeholder="Add Your Own Genre" />
+      <input ng-model="newGenre" class="form-control" type="text" placeholder="Didja think of another genre for {{ artist.name}}?" />
       <input type="submit" value="Add">
       </form>
   </div>
@@ -28,8 +28,8 @@
   <div class="row">
   <div class="col-lg-12">
     <h1 id="biggest_text">Comments</h1>
-    <form id="add_comment">
-    <input class="form-control" type="text" placeholder="Why do you love this artist?" />
+    <form ng-submit="sendComment()">
+    <input ng-model="newComment" class="form-control" type="text" placeholder="Why do you love this artist?" />
     <input type="submit" value="Comment">
     </form>
   </div>

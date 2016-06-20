@@ -2,6 +2,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def spotify
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    sign_in @user, :bypass => true
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
     top = spotify_user.top_artists.slice(0,5)
