@@ -1,6 +1,10 @@
-function ArtistController($scope, $stateParams, BackEndService, LastfmService) {
+function ArtistController($scope, $stateParams, BackEndService, LastfmService, $http) {
   var ctrl = this;
   ctrl.id = $stateParams.id;
+
+  var Genre = function(name) {
+    this.name = name
+  }
 
   var init = function() {
 
@@ -25,6 +29,15 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService) {
       })
     })
   };
+
+  $scope.sendGenre = function() {
+    var data = JSON.stringify({id: ctrl.id, genre: $scope.newGenre})
+    var temp = new Genre($scope.newGenre)
+    ctrl.genres.push(temp)
+    console.log(ctrl.genres)
+    BackEndService
+      .postGenre(data)
+  }
 
   init()
 

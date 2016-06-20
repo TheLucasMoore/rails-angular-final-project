@@ -17,7 +17,6 @@ function BackEndService($http) {
 
   // return genre show
   this.getGenre = function(id) {
-    console.log(id)
     return $http.get('/genres/' + id)
   }
 
@@ -28,6 +27,10 @@ function BackEndService($http) {
 
   this.postArtistListens = function(id, playcount) {
     $http.patch('/artists/' + id, playcount)
+  }
+
+  this.postGenre = function(data) {
+    $http.post('/genres', data)
   }
 }
 
