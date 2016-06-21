@@ -10,13 +10,12 @@
     <div class="container">
       <a class="navbar-brand active" ui-sref="home">$$$potify</a>
       <ul class="nav navbar-nav">
-        <li ng-if="!user"><a ui-sref="login">Login</a></li> 
-        <li ng-if="user"><a ui-sref="/chart/{{ user.id }}">Your Chart</a></li>
         <li><a ui-sref="artists">Artists</a></li>
         <li><a ui-sref="genres.list">Genres</a></li>
+        <li><a ui-sref="about">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a ui-sref="about">About</a></li>
+        <li><a ui-sref="login">Login</a></li> 
       </ul>
     </div>
   </div>
