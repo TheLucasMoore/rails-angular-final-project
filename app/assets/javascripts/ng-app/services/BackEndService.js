@@ -30,11 +30,11 @@ function BackEndService($http) {
   }
 
   this.postGenre = function(data) {
-    $http.post('/genres', data)
+    return $http.post('/genres', data)
   }
 
   this.postComment = function(data) {
-    $http.post('/artists', data)
+    return $http.post('/artists', data)
   }
 }
 
