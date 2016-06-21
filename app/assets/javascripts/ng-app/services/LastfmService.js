@@ -1,6 +1,6 @@
 function LastfmService($http) {
 
-  var url = 'http://ws.audioscrobbler.com/2.0/';
+  var url = 'https://ws.audioscrobbler.com/2.0/';
   var API_KEY = '00e8b5ac96892ec9c27ac8f763125b4e';
 
   this.searchFor = function(query) {

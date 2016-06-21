@@ -9,8 +9,6 @@ function HomeController(LastfmService, SpotifyService) {
   ctrl.verb = verbs[random];
   ctrl.noun = nouns[random];
 
-  console.log(ctrl.noun, ctrl.verb)
-
   ctrl.submit = function() {
     var query = ctrl.query;
 
@@ -45,8 +43,6 @@ function HomeController(LastfmService, SpotifyService) {
             ctrl.tracks = response.data.tracks.slice(0, 4)
           })
       })
-
-    $("#search_result").scrollTop($("#search_result")[0].scrollHeight);
   }
 }
 
