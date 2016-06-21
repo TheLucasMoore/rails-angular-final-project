@@ -30,7 +30,7 @@
 
     <div class="col-lg-6 col-md-12 col-sm-12">
         <h2>{{ home.playcount }} estimated plays</h2>
-        <h2>$ {{ home.earnings }} total earnings</h2>
+        <h2>$ {{ home.earnings.toLocaleString() }} total earnings</h2>
         <p id="artist_bio" ng-bind-html="home.bio"></p>
     </div>
   </div>

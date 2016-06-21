@@ -24,7 +24,8 @@ function HomeController(LastfmService, SpotifyService) {
             // console.log(response);
             ctrl.bio = response.data.artist.bio.summary
             ctrl.playcount = response.data.artist.stats.playcount
-            ctrl.earnings = (ctrl.playcount * 0.007).toLocaleString()
+            ctrl.earnings = (ctrl.playcount * 0.007).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+            
           })
       })
 

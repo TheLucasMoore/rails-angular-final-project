@@ -14,7 +14,7 @@ function SpotifyService($http) {
   this.authorize = function() {
     var client_id = ENV[spotify_client_id];
     var secret_code = ENV[spotify_client_secret];
-    var redirect_uri = 'https://afternoon-island-86761.herokuapp.com/users/auth/spotify/callback';
+    var redirect_uri = 'http://ssspotify.com/users/auth/spotify/callback';
     var scope = '';
 
     var baseUrl = "https://accounts.spotify.com/authorize";
