@@ -12,6 +12,8 @@ function LastfmService($http) {
   };
 }
 
+LastfmService.$inject = ['$http']
+
 angular
   .module('app')
   .service('LastfmService', LastfmService)

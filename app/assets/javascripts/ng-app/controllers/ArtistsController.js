@@ -7,7 +7,6 @@ function ArtistsController(BackEndService) {
       .getArtists()
       .then(function(response) {
         ctrl.all = response.data
-        console.log(ctrl.all)
       })
   };
 

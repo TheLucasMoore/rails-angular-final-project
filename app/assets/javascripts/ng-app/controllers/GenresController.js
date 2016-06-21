@@ -7,7 +7,6 @@ function GenresController(BackEndService) {
       .getGenres()
       .then(function(response) {
         ctrl.all = response.data
-        console.log(ctrl.all)
       })
   };
 

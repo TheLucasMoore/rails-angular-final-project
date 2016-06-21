@@ -38,6 +38,8 @@ function BackEndService($http) {
   }
 }
 
+BackEndService.$inject = ['$http']
+
 angular
   .module('app')
   .service('BackEndService', BackEndService)

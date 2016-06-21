@@ -1,4 +1,4 @@
-function ArtistController($scope, $stateParams, BackEndService, LastfmService, $http) {
+function ArtistController($scope, $stateParams, BackEndService, LastfmService) {
   var ctrl = this;
   ctrl.id = $stateParams.id;
 
@@ -12,7 +12,6 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService, $
   }
 
   var init = function() {
-
     BackEndService
       .getArtist(ctrl.id)
       .then(function(response) {

@@ -6,7 +6,6 @@ function GenreController($stateParams, BackEndService) {
     BackEndService
       .getGenre(id)
       .then(function(response) {
-        console.log(response)
         ctrl.name = response.data.name
         ctrl.artists = response.data.artists
       });

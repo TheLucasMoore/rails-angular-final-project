@@ -22,6 +22,8 @@ function SpotifyService($http) {
   }
 };
 
+SpotifyService.$inject = ['$http']
+
 angular
   .module('app')
   .service('SpotifyService', SpotifyService)
