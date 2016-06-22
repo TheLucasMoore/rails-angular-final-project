@@ -21,8 +21,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @comment = params[:comment]
 
-    @artist.artist_users.build(:user => current_user, :comment => @comment, :uid => current_user.uid)
-    @artist.save
+    if current_user
+      @artist.artist_users.build(:user => current_user, :comment => @comment, :uid => current_user.uid)
+      @artist.save
+    else
+      render(:file => File.join(Rails.root, 'public/500.html'), :status => 500, :layout => false)
+    end
   end
   
 end

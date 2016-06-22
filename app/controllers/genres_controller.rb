@@ -14,6 +14,12 @@ class GenresController < ApplicationController
     @genre = Genre.find_or_create_by(name: params[:genre])
     @artist = Artist.find(params[:id])
 
-    @artist.genres << @genre unless @artist.genres.include?(@genre)
+    if @artist.genres.include?(@genre)
+      render :json => @genre
+    else
+      @artist.artist_genres.build(:genre => @genre)
+      @artist.save
+      render :json => @genre
+    end
   end
 end

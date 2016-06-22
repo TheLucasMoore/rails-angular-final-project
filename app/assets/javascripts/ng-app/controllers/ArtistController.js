@@ -39,8 +39,8 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService) {
     var temp = new Genre($scope.newGenre)
     BackEndService
       .postGenre(data)
-      .then(function(response) {
-        ctrl.genres.push(temp)
+      .success(function(response) {
+        ctrl.genres.push(response);
         // $('ul#genres').append('<li>' + $scope.newGenre + '</li>')
       })
   }
@@ -51,10 +51,14 @@ function ArtistController($scope, $stateParams, BackEndService, LastfmService) {
 
     BackEndService
       .postComment(data)
-      .then(function(response) {
+      .success(function(response) {
+        console.log(response);
         ctrl.comments.push(temp)
-        // $('.list-group').append('<li class="list-group-item"><strong>You just said: </strong> ' + $scope.newComment + '</li>')
       })
+      .error(function(response) {
+        alert("Log in to comment!")
+      });
+        // $('.list-group').append('<li class="list-group-item"><strong>You just said: </strong> ' + $scope.newComment + '</li>')
   }
 
   init()

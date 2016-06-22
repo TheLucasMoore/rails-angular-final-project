@@ -17,12 +17,16 @@ class Artist < ActiveRecord::Base
       new_artist.uri = artist.uri
       new_artist.followers = artist.followers["total"]
 
-      user.artists.include?(new_artist) ? return : new_artist.artist_users.build(user: user)
+      if user.artists.include?(new_artist)
+        new_artist.save
+      else
+        new_artist.artist_users.build(user: user)
+        new_artist.save
+      end
       # user.artists << new_artist unless user.artists.include?(new_artist)
       # # user.artist_users.build(:artist => new_artist)
       # new_artist.save # When this happens
       # user.save
-      new_artist.save
     end
   end
 end
