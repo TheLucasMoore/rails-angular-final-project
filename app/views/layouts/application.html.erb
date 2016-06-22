@@ -16,7 +16,19 @@
     <p class="alert"><%= alert %></p>
     </div>
     <% end %>
-    <%= yield %>
-  </body>
+
+  <%= yield %>
+
+  <footer>
+    <div class="footer navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+          <div class="col-lg-12">
+            <h5>Built with <%= image_tag('heart.png') %> by <a href="http://dev.thelucasmoore.com" target="_blank">Lucas Moore</a></h5>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
 
